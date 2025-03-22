@@ -43,7 +43,7 @@ public class Project1 {
             // Compute average age and find the tallest player
             int totalAge = 0;
             int totalHeightInches = 0;
-            Player tallestPlayer = players.get(0); // Assume first player is the tallest initially
+            Player tallestPlayer = players.getFirst(); // Assume first player is the tallest initially
 
             for (Player player : players) {
                 int heightInInches = player.getHeight().toInches();
@@ -56,11 +56,22 @@ public class Project1 {
             }
 
             double averageAge = (double) totalAge / players.size();
-            double averageHeight = (double) totalHeightInches / players.size();
+
+            // Find the tallest player under average age
+            Player tallestUnderAvg = null;
+            for (Player player : players) {
+                if (player.getAge() < averageAge) {
+                    if (tallestUnderAvg == null ||
+                            player.getHeight().toInches() > tallestUnderAvg.getHeight().toInches() && player.getAge() < averageAge) {
+                        tallestUnderAvg = player;
+                    }
+                }
+            }
 
             System.out.println("The average age of all players is " + averageAge);
             System.out.println("The tallest player whose age is less than the average is:");
-            System.out.println("Name: " + tallestPlayer.getName() + " Age: " + tallestPlayer.getAge() + " Height: " + "(" + tallestPlayer.getHeight() + ")");
+            assert tallestUnderAvg != null;
+            System.out.println("Name: " + tallestUnderAvg.getName() + " Age: " + tallestUnderAvg.getAge() + " Height: " + "(" + tallestUnderAvg.getHeight() + ")");
         }
         scanner.close();
     }
