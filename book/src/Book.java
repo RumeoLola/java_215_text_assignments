@@ -1,20 +1,22 @@
 public class Book {
-    private final String title;
-    private final int pages;
+    private String title;
+    private String author;
+    private int yearPublished;
+    private int pages;
 
-    // Constructor for Book class
-    public Book(String title, int pages) {
+    // Constructor
+    public Book(String title, String author, int yearPublished, int pages) {
         this.title = title;
+        this.author = author;
+        this.yearPublished = yearPublished;
         this.pages = pages;
     }
 
-    // Getter for title
-    public String getTitle() {
-        return title;
-    }
-
-    // Getter for pages
-    public int getPages() {
-        return pages;
+    @Override
+    public String toString() {
+        return "Title: " + title + "\n" +
+                "Author: " + author + "\n" +
+                "Year: " + yearPublished + "\n" +
+                "Pages: " + pages;
     }
 }
