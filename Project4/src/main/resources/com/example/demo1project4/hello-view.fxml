@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="495.0" prefWidth="719.0" spacing="5.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1project4.ComparableController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <children>
+      <HBox prefHeight="20.0" prefWidth="679.0" spacing="50.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="100.0" text="Start Time">
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin></Label>
+            <Label prefHeight="18.0" prefWidth="100.0" text="End Time">
+               <HBox.margin>
+                  <Insets left="75.0" />
+               </HBox.margin></Label>
+         </children>
+         <padding>
+            <Insets left="100.0" />
+         </padding></HBox>
+      <HBox prefHeight="65.0" prefWidth="584.0">
+         <children>
+            <VBox prefHeight="100.0" prefWidth="100.0">
+               <children>
+                  <Label prefHeight="29.0" prefWidth="92.0" text="Time Interval 1" />
+                  <Label prefHeight="29.0" prefWidth="92.0" text="Time Interval 2" />
+               </children>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="175.0">
+               <children>
+                  <TextField fx:id="startInterval1Field" prefHeight="30.0" prefWidth="100.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin></TextField>
+                  <TextField fx:id="startInterval2Field" prefHeight="30.0" prefWidth="100.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="175.0">
+               <children>
+                  <TextField fx:id="endInterval1Field" prefHeight="30.0" prefWidth="100.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin></TextField>
+                  <TextField fx:id="endInterval2Field" prefHeight="30.0" prefWidth="100.0" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+      <Button fx:id="CompareIntervals" onAction="#handleCompare" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="450.0" text="Compare Intervals" />
+      <HBox prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <VBox prefHeight="100.0" prefWidth="37.0">
+               <children>
+                  <Label minWidth="-Infinity" prefWidth="92.0" text="Time to Check" />
+               </children>
+            </VBox>
+            <TextField fx:id="timeToCheckField" minHeight="-Infinity" minWidth="-Infinity" prefWidth="350.0" />
+         </children>
+      </HBox>
+      <Button fx:id="checkTime" onAction="#handleTime2" minWidth="-Infinity" mnemonicParsing="false" prefWidth="450.0" text="Compare Intervals" />
+      <TextField fx:id="resultField" />
+   </children>
+</VBox>
